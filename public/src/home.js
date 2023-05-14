@@ -1,5 +1,9 @@
 function getTotalBooksCount(books) {
-  
+  const totalBooks = books.reduce((total, book) => {
+    result = total + book; 
+    return result;
+  }, 0);
+  return totalBooks;
 }
 
 function getTotalAccountsCount(accounts) {}
