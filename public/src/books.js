@@ -1,8 +1,14 @@
-function findAuthorById(authors, id) {}
+function findAuthorById(authors, id) {
+  return author = authors.find((found) => found.id === id);
+}
 
-function findBookById(books, id) {}
+function findBookById(books, id) {
+  return book = books.find((found) => found.id === id);
+}
 
-function partitionBooksByBorrowedStatus(books) {}
+function partitionBooksByBorrowedStatus(books) {
+  
+}
 
 function getBorrowersForBook(book, accounts) {}
 
