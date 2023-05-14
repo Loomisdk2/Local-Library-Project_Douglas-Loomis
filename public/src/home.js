@@ -1,12 +1,10 @@
 function getTotalBooksCount(books) {
-  const totalBooks = books.reduce((total, book) => {
-    result = total + book; 
-    return result;
-  }, 0);
-  return totalBooks;
+  return books.length;
 }
 
-function getTotalAccountsCount(accounts) {}
+function getTotalAccountsCount(accounts) {
+  return accounts.length;
+}
 
 function getBooksBorrowedCount(books) {}
 

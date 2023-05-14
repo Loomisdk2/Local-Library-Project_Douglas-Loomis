@@ -1,8 +1,12 @@
+let findAnyById = require("./helperFunctions")
+
 function findAccountById(accounts, id) {
-  for (let i in accounts) {
-    if (accounts[i].id === id)
-      return accounts[i];
-  }
+  // use helper function
+  // for (let i in accounts) {
+  //   if (accounts[i].id === id)
+  //     return accounts[i]; 
+  // }
+  return findAnyById(accounts, id);
 }
 
 function sortAccountsByLastName(accounts) {
