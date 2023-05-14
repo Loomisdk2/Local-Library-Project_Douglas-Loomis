@@ -13,7 +13,9 @@ function sortAccountsByLastName(accounts) {
 }
 
 function getTotalNumberOfBorrows(account, books) {
-  
+  let total = 0;
+  let filtered = 
+
 }
 
 function getBooksPossessedByAccount(account, books, authors) {}
