@@ -1,5 +1,6 @@
 let findAnyById = require("./helperFunctions")
 
+///////////      1     ////////////
 function findAccountById(accounts, id) {
   // use helper function
   // for (let i in accounts) {
@@ -9,6 +10,7 @@ function findAccountById(accounts, id) {
   return findAnyById(accounts, id);
 }
 
+//////////    2    //////////////
 function sortAccountsByLastName(accounts) {
   //for (let i = 0, i < accounts.length; i++){} <---- Don't need this. .sort() does that automatcally.
   //const lastName = accounts.name.last; <--- This causes a problem.
@@ -16,6 +18,7 @@ function sortAccountsByLastName(accounts) {
  //return accounts; <---- I can return directly.
 }
 
+/////////        3         //////////////
 function getTotalNumberOfBorrows(account, books) {
   let total = 0;
 // find, reduce
@@ -29,6 +32,7 @@ for (let i = 0; i < books.length; i++) {
 return total;
 }
 
+///////////       4       ////////////////////
 function getBooksPossessedByAccount(account, books, authors) {}
 //hard
 
