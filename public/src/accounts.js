@@ -18,12 +18,20 @@ function sortAccountsByLastName(accounts) {
 
 function getTotalNumberOfBorrows(account, books) {
   let total = 0;
-  let filtered = 0;
-
+// find, reduce
+const accountId = account.id
+for (let i = 0; i < books.length; i++) {
+  for (let j = 0; j < books[i].borrows.length; j++)
+   if (accountId === books[i].borrows[j].id) {
+    total += 1;
+   }
+}
+return total;
 }
 
 function getBooksPossessedByAccount(account, books, authors) {}
 //hard
+
 module.exports = {
   findAccountById,
   sortAccountsByLastName,
