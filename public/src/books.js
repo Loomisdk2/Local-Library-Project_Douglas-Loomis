@@ -1,3 +1,5 @@
+let findAnyById = require("./helperFunctions")
+
 function findAuthorById(authors, id) {
   return author = authors.find((found) => found.id === id);
 }
