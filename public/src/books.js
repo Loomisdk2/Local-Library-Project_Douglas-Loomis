@@ -7,11 +7,11 @@ function findBookById(books, id) {
 }
 
 function partitionBooksByBorrowedStatus(books) {
-  
+
 }
 
 function getBorrowersForBook(book, accounts) {}
-
+//hard
 module.exports = {
   findAuthorById,
   findBookById,
