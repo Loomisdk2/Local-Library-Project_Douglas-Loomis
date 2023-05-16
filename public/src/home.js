@@ -11,7 +11,15 @@ function getTotalAccountsCount(accounts) {
 }
 
 ///////     11     /////////
-function getBooksBorrowedCount(books) {}
+function getBooksBorrowedCount(books) {
+  let checkedOutTotal = 0;
+  for (let i = 0; i < books.length; i++) {
+    if (books[i].borrows.returned == false) {
+      checkedOutTotal += 1;
+    }
+  }
+  return checkedOutTotal;
+}
 
 ///////    12      /////////
 function getMostCommonGenres(books) {}
