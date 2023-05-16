@@ -1,16 +1,16 @@
 let findAnyById = require("./helperFunctions")
 
-/////     9     ////////
+/////     9   passed/done    ////////
 function getTotalBooksCount(books) {
   return books.length;
 }
 
-//////     10    ///////
+//////     10   passed/done   ///////
 function getTotalAccountsCount(accounts) {
   return accounts.length;
 }
 
-///////     11     /////////
+///////     11    fail    /////////
 function getBooksBorrowedCount(books) {
   let checkedOutTotal = 0;
   for (let i = 0; i < books.length; i++) {
