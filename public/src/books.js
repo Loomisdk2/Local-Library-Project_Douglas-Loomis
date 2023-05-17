@@ -13,11 +13,25 @@ function findBookById(books, id) {
 }
 ////////      7       //////////
 function partitionBooksByBorrowedStatus(books) {
-
+let isReturned = [];
+let notReturned = [];
+const booksStatus = [isReturned, notReturned];
+  for (let book in books) {
+if (books[book].borrows[0].returned === true) {
+  isReturned.push(books[book]);
+  }
+  else {
+    notReturned.push(books[book]);
+  }
+}
+return booksStatus;
 }
 
+
 /////////   8      /////////////
-function getBorrowersForBook(book, accounts) {}
+function getBorrowersForBook(book, accounts) {
+
+}
 //hard
 module.exports = {
   findAuthorById,
