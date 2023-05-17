@@ -28,7 +28,8 @@ return booksStatus;
 }
 
 
-/////////   8      /////////////
+/////////      8      /////////////
+// Use slice?
 function getBorrowersForBook(book, accounts) {
 
 }
