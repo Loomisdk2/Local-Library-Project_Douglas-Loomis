@@ -10,7 +10,7 @@ function getTotalAccountsCount(accounts) {
   return accounts.length;
 }
 
-///////     11    fail    /////////
+///////     11    passed/done   /////////
 // forEach
 function getBooksBorrowedCount(books) {
   let checkedOutTotal = 0;
