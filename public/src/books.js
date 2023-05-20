@@ -31,7 +31,7 @@ return [isReturned, notReturned];
 }
 
 
-/////////      8      /////////////
+/////////      8     fail     /////////////
 // Use includes, slice
 function getBorrowersForBook(book, accounts) {
   const borrowersList = [];
