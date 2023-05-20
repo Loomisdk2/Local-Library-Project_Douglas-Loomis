@@ -32,9 +32,34 @@ return [isReturned, notReturned];
 
 
 /////////      8      /////////////
-// Use slice?
+// Use includes, slice
 function getBorrowersForBook(book, accounts) {
+  const borrowersList = [];
+  for (const borrower of book) {
+    if (borrower.borrows.id === accounts.id) {
+      borrowersList.push(borrower);
+    }
+  }
+  const tenRecentBorrowers = borrowersList.slice(0, 10);
+  //  ai help
+  // let borrowers = [];
+  // borrowers = book.filter((index) => index.borrows.id === accounts.id);
+  // borrowersTen = borrowers.slice(0, 10);
 
+//  My Attempt
+  // let borrowers = [];
+// let bookBorrow = book.borrows;
+// for (let i=0; i<bookBorrow.length; i++) {
+//   if (bookBorrow[i].id === accounts) {
+//     borrowers.push
+//   }
+// }
+
+//    Pseudo
+  // We're given a book. 
+  // We have to look in the "borrows" key.
+  // match the first 10 accounts whose id's are included in the book's "borrows" key.
+  return tenRecentBorrowers;
 }
 //hard
 module.exports = {

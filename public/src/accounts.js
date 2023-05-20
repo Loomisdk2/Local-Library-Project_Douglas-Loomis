@@ -28,16 +28,15 @@ return books.reduce((accum, book) => {
 }, 0);
 }
 
-///////////       4    not done   ////////////////////
-// function getBooksPossessedByAccount(account, books, authors) {
-//   let borrowedBooks = [];
-//   for (i = 0; i < books.length; i++) {
-//     if (books[i].borrows[0].id === account.id) {
-//       borrowedBooks.push(books[i]);
-//       if borrowedBooks
-//     }
-//   }
-//   return borrowedBooks;
+///////////       4    failed/not nesting the authors in the book object. ////////////////////
+function getBooksPossessedByAccount(account, books, authors) {
+  let borrowedBooks = [];
+  for (i = 0; i < books.length; i++) {
+    if (books[i].borrows.some(borrow => borrow.id === account.id && !borrow.returned)) {
+      borrowedBooks.push(books[i]);
+    }
+  }
+  return borrowedBooks;
 }
 //hard
 
