@@ -11,20 +11,23 @@ function findBookById(books, id) {
   //return book = books.find((found) => found.id === id);
   return findAnyById(books, id);
 }
-////////      7       //////////
+////////      7    fail/expected 6 but got 9   //////////
 function partitionBooksByBorrowedStatus(books) {
-let isReturned = [];
-let notReturned = [];
-const booksStatus = [isReturned, notReturned];
-  for (let book in books) {
-if (books[book].borrows[0].returned === true) {
-  isReturned.push(books[book]);
-  }
-  else {
-    notReturned.push(books[book]);
-  }
-}
-return booksStatus;
+// let isReturned = [];
+// let notReturned = [];
+
+//   for (let book in books) {
+//     for(let borrow of books[book].borrows) {
+//       if(borrow.returned) {
+//         isReturned.push(books[book]);
+//    } else {
+//      notReturned.push(books[book]);
+//       }
+//     }
+// }
+const isReturned = books.map(book => book.borrows.returned);
+const notReturned = books.filter(book => !book.borrows.returned);
+return [isReturned, notReturned];
 }
 
 
