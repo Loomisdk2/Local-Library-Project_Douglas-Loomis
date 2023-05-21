@@ -35,7 +35,7 @@ return [isReturned, notReturned];
 // Use includes, slice
 function getBorrowersForBook(book, accounts) {
   const borrowersList = [];
-  for (const borrower of book) {
+  for (const borrower of book.borrows) {
     if (borrower.borrows.id === accounts.id) {
       borrowersList.push(borrower);
     }

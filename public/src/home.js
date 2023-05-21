@@ -27,7 +27,9 @@ return checkedOutTotal;
   
 
 ///////    12      /////////
-function getMostCommonGenres(books) {}
+function getMostCommonGenres(books) {
+  
+}
 // hard
 
 //////     13     ///////////
