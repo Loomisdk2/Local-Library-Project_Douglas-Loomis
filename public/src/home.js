@@ -11,17 +11,13 @@ function getTotalAccountsCount(accounts) {
 }
 
 ///////     11    passed/done   /////////
-// forEach
 function getBooksBorrowedCount(books) {
   let checkedOutTotal = 0;
-  // for (let i = 0; i < books.length; i++) {
-  //   if (books[i].borrows.returned === false) {
-  //     checkedOutTotal += 1;
 books.forEach((book) => {
   if (!book.borrows[0].returned) {
     checkedOutTotal++;
   }
-})
+});
 return checkedOutTotal;
     }
   
@@ -47,18 +43,15 @@ function getMostPopularBooks(books) {
     counts.push({ name: book.title, count: borrowCount });
     return counts;
   }, []);
-
   const popularBooks = bookCounts
     .sort((a, b) => b.count - a.count)
     .slice(0, 5);
-
   return popularBooks;
 }
 
 /////     14      /////////
 function getMostPopularAuthors(books, authors) {
   const authorCounts = {};
-
   books.forEach((book) => {
     const { authorId, borrows } = book;
     if (!authorCounts[authorId]) {
@@ -66,7 +59,6 @@ function getMostPopularAuthors(books, authors) {
     }
     authorCounts[authorId] += borrows.length;
   });
-
   const popularAuthors = Object.entries(authorCounts)
     .map(([authorId, count]) => {
       const { first, last } = authors.find((author) => author.id === parseInt(authorId, 10)).name;
@@ -74,11 +66,8 @@ function getMostPopularAuthors(books, authors) {
     })
     .sort((a, b) => b.count - a.count)
     .slice(0, 5);
-
   return popularAuthors;
 }
-
-// hard (look up the .slice() (use slice if only returning a certain number of variables).)
 
 module.exports = {
   getTotalBooksCount,

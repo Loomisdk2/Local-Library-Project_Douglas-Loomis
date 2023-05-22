@@ -11,57 +11,39 @@ function findBookById(books, id) {
   //return book = books.find((found) => found.id === id);
   return findAnyById(books, id);
 }
-////////      7    fail/expected 6 but got 9   //////////
+////////      7    pass/done  //////////
 function partitionBooksByBorrowedStatus(books) {
-// let isReturned = [];
-// let notReturned = [];
+  const borrowed = [];
+  const returned = [];
 
-//   for (let book in books) {
-//     for(let borrow of books[book].borrows) {
-//       if(borrow.returned) {
-//         isReturned.push(books[book]);
-//    } else {
-//      notReturned.push(books[book]);
-//       }
-//     }
-// }
-const isReturned = books.map(book => book.borrows.returned);
-const notReturned = books.filter(book => !book.borrows.returned);
-return [isReturned, notReturned];
-}
+  for (const book of books) {
+    const isReturned = book.borrows[0].returned;
 
-
-/////////      8     fail     /////////////
-// Use includes, slice
-function getBorrowersForBook(book, accounts) {
-  const borrowersList = [];
-  for (const borrower of book.borrows) {
-    if (borrower.borrows.id === accounts.id) {
-      borrowersList.push(borrower);
+    if (isReturned) {
+      returned.push(book);
+    } else {
+      borrowed.push(book);
     }
   }
-  const tenRecentBorrowers = borrowersList.slice(0, 10);
-  //  ai help
-  // let borrowers = [];
-  // borrowers = book.filter((index) => index.borrows.id === accounts.id);
-  // borrowersTen = borrowers.slice(0, 10);
 
-//  My Attempt
-  // let borrowers = [];
-// let bookBorrow = book.borrows;
-// for (let i=0; i<bookBorrow.length; i++) {
-//   if (bookBorrow[i].id === accounts) {
-//     borrowers.push
-//   }
-// }
-
-//    Pseudo
-  // We're given a book. 
-  // We have to look in the "borrows" key.
-  // match the first 10 accounts whose id's are included in the book's "borrows" key.
-  return tenRecentBorrowers;
+  return [borrowed, returned];
 }
-//hard
+
+/////////      8         /////////////
+function getBorrowersForBook(book, accounts) {
+  const borrowersList = [];
+  for (let i = 0; i < book.borrows.length; i++) {
+    const borrow = book.borrows[i];
+    const account = accounts.find(acc => acc.id === borrow.id);
+    if (account) {
+      account.returned = borrow.returned;
+      borrowersList.push(account);
+    }
+    }
+    borrowersTen = borrowersList.slice(0, 10);
+    return borrowersTen;
+  }
+  
 module.exports = {
   findAuthorById,
   findBookById,
